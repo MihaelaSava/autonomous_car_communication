@@ -15,7 +15,9 @@ class AutonomousCar
   end
 
   def recent_traffic_events
-    traffic_events.select { |e| e.distance_from_car <= 100 }
+    traffic_events.select do |event|
+      current_location.distance_to(event.location) <= 100
+    end
   end
 
   def receive_message(message)
