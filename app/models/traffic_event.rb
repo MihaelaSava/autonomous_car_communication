@@ -1,8 +1,8 @@
 class TrafficEvent
-  attr_reader :distance_from_car
+  attr_reader :location
 
-  def initialize(distance_from_car:)
-    @distance_from_car = distance_from_car
+  def initialize(location:)
+    @location = location
   end
 
   def severity
